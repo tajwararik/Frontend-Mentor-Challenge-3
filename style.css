@@ -1,0 +1,229 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url(./assets/font/HankenGrotesk-VariableFont_wght.ttf) format(truetype);
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --light-red: hsl(0, 100%, 67%);
+    --bg-light-red: hsla(0, 100%, 67%, 0.1);
+
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --bg-orangey-yellow: hsla(39, 100%, 56%, 0.1);
+
+    --green-teal: hsl(166, 100%, 37%);
+    --bg-green-teal: hsla(166, 100%, 37%, 0.1);
+
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --bg-cobalt-blue: hsla(234, 85%, 45%, 0.1);
+
+    --bg-color: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    --circle-bg-color: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsl(224, 30%, 27%);
+    --light-gray-blue: hsla(224, 30%, 27%, 0.5);
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-bolder: 800;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Hanken Grotesk';
+    font-weight: var(--fw-regular);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 2em;
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.05);
+}
+
+section {
+    max-width: 350px;
+    height: auto;
+}
+
+section .title {
+    font-size: 1.35em;
+    font-weight: var(--fw-bolder);
+    padding: 1.5em 1.5em 0;
+}
+
+.section-1 {
+    text-align: center;
+    color: var(--light-lavender);
+    background: var(--bg-color);
+    border-radius: 2rem;
+}
+
+.result>p {
+    margin: 2em auto;
+    display: grid;
+    place-content: center;
+    width: 11.5em;
+    background: var(--circle-bg-color);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.result>p>span {
+    display: block;
+    font-size: 4.5em;
+    font-weight: var(--fw-bolder);
+    color: var(--pale-blue);
+    margin-bottom: -0.15em;
+}
+
+.passage p:first-of-type {
+    color: var(--pale-blue);
+    font-size: 1.75em;
+    font-weight: var(--fw-bold);
+    margin-bottom: 0.5em;
+}
+
+.passage p:last-of-type {
+    padding: 0 2.5em 2.5em;
+}
+
+.score {
+    margin: 1.5em;
+}
+
+.score>article {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0;
+    margin: 1em;
+    font-weight: var(--fw-bold);
+    border-radius: 0.65em;
+}
+
+
+.score>article>div {
+    display: flex;
+    gap: 0.6em;
+    margin-left: -0.5em;
+}
+
+article:nth-child(1) {
+    background-color: var(--bg-light-red);
+}
+
+article:nth-child(1)>div {
+    color: var(--light-red);
+}
+
+article:nth-child(2) {
+    background-color: var(--bg-orangey-yellow);
+}
+
+article:nth-child(2)>div {
+    color: var(--orangey-yellow);
+}
+
+article:nth-child(3) {
+    background-color: var(--bg-green-teal);
+}
+
+article:nth-child(3)>div {
+    color: var(--green-teal);
+}
+
+article:nth-child(4) {
+    background-color: var(--bg-cobalt-blue);
+}
+
+article:nth-child(4)>div {
+    color: var(--cobalt-blue);
+}
+
+article>p {
+    color: var(--light-gray-blue);
+}
+
+.section-2 .title,
+article>p>span {
+    color: var(--dark-gray-blue);
+}
+
+button {
+    display: block;
+    font-size: 1em;
+    font-weight: var(--fw-bold);
+    padding: 1em 5em;
+    margin: 2.25em auto 0;
+    color: var(--white);
+    background-color: var(--dark-gray-blue);
+    border-radius: 5em;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--bg-color);
+}
+
+footer {
+    font-size: 0.6em;
+    text-align: center;
+    position: absolute;
+    bottom: 0.5em;
+}
+
+footer a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media(max-width: 749px) {
+    body {
+        font-size: 16px;
+        justify-content: space-between;
+    }
+
+    main {
+        display: block;
+    }
+
+    .section-1 {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .passage p:last-of-type {
+        padding: 0 2em 1.5em;
+    }
+
+    button {
+        margin: 2em auto;
+    }
+
+    .attribution {
+        position: static;
+        display: flex;
+        justify-content: center;
+    }
+
+    footer {
+        position: unset;
+        margin: 2.5em auto 1em;
+    }
+}
